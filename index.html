@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, maximum-scale=1.0, initial-scale=1.0">
+
+	<title>Can We Find Strong Lottery Tickets in Generative Models?</title>
+	<link rel="stylesheet" href="index.css">
+	<meta property="og:image" content="Path to my teaser.png"/> <!-- Facebook automatically scrapes this. Go to https://developers.facebook.com/tools/debug/ if you update and want to force Facebook to rescrape. -->
+	<meta property="og:title" content="Can We Find Strong Lottery Tickets in Generative Models?" />
+	<meta property="og:description" content="Paper description." />
+	
+	<!-- Get from Google Analytics -->
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script src="http://www.google.com/jsapi" type="text/javascript"></script> 
+	<script type="text/javascript">google.load("jquery", "1.3.2");</script>
+	<script async src=""></script> 
+	<script src="main.js" ></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-75863369-6');
+	</script>
+</head>
+
+<body>
+
+	
+	
+	<br>
+	<center>
+		<span style="font-size:36px">Can We Find Strong Lottery Tickets in Generative Models?</span>
+		<br>
+		<table align=center width=750px>
+			<table align=center width=750px>
+				<tr>
+					<td align=center width=140px>
+						<center>
+							<span style="font-size:20px">Sangyeop Yeo<sup>1</sup></span>
+						</center>
+					</td>
+					<td align=center width=140px>
+						<center>
+							<span style="font-size:20px">Yoojin Jang<sup>1</sup></a></span>
+						</center>
+					</td>
+					<td align=center width=140px>
+						<center>
+							<span style="font-size:20px"><a href="https://scholar.google.co.kr/citations?hl=en&user=Cs75s1MAAAAJ&view_op=list_works&sortby=pubdate">Jy-yong Sohn<sup>2</sup></a></span>
+						</center>
+					</td>
+					<td align=center width=140px>
+						<center>
+							<span style="font-size:20px"><a href="https://scholar.google.com/citations?user=jcP7m1QAAAAJ&hl=en">Dongyoon Han<sup>3</sup></a></a></span>
+						</center>
+					</td>
+					<td align=center width=140px>
+						<center>
+							<span style="font-size:20px"><a href="https://scholar.google.co.kr/citations?hl=en&user=7NBlQw4AAAAJ">Jaejun Yoo<sup>1</sup></a></span>
+						</center>
+					</td>
+				</tr>
+				
+				
+			</table>
+			<br>
+			<table align="center" width="700px">
+				<tbody><tr>
+						
+					</td>
+						<td align="center" width="250px">
+				  <center>
+						<span style="font-size:15px"><sup>1</sup>Ulsan National Institute of Science & Technology</span>
+					</center>
+					</td>
+					<td align="center" width="50px">
+						<center>
+							  <span style="font-size:15px"></span>
+						  </center>
+						  </td>
+						<td align="center" width="250px">
+				  <center>
+						<span style="font-size:15px"><sup>2</sup>University of Wisconsin-Madison</span>
+					</center>
+					</td>
+					<td align="center" width="50px">
+						<center>
+							  <span style="font-size:15px"></span>
+						  </center>
+						  </td>
+						<td align="center" width="100px">
+				  <center>
+						<span style="font-size:15px"><sup>3</sup>NAVER AI Lab
+						</span>
+					</center>
+					</td>
+					
+			</tr></tbody></table>
+			<table align=center width=250px>
+				<tr>
+					<td align=center width=120px>
+						<center>
+							<span style="font-size:24px"><a href=''>[Paper]</a></span>
+						</center>
+					</td>
+					<td align=center width=120px>
+						<center>
+							<span style="font-size:24px">[GitHub]</span><br>
+						</center>
+					</td>
+
+				</tr>
+				
+			</table>
+
+				<p style="margin-top: 20px; color:gray"> We will share our sourcecode soon.
+				</p>
+
+		</table>
+	</center>
+
+	<center>
+		<table align=center width=850px style="margin-top: 50px">
+			<tr>
+				<td width=260px>
+					<center>
+						<img class="round" style="width:1000px" src="./resources/figure2.jpg"/>
+					</center>
+				</td>
+			</tr>
+		</table>
+		<table align=center width=850px>
+			<tr>
+				<td>
+				
+				</td>
+			</tr>
+		</table>
+	</center>
+
+	<hr>
+
+	<table align=center width=850px>
+		<center><h1>Abstract</h1></center>
+		<tr>
+			<td>
+				<b>Yes.</b> In this paper, we investigate <i>strong lottery tickets</i> in generative models, the subnetworks that achieve good generative performance
+				 without any weight update. Neural network pruning is considered the main cornerstone of model compression for reducing the costs of computation and memory.
+Unfortunately, pruning a generative model has not been extensively explored, and all existing pruning algorithms suffer from excessive weight-training costs, performance degradation, limited generalizability, or complicated training. To address these problems, we propose to find a strong lottery ticket via moment-matching scores. Our experimental results show that the discovered subnetwork can perform similarly or better than the trained dense model even when only 10% of the weights remain. To the best of our knowledge, we are the first to show the existence of strong lottery tickets in generative models and provide an algorithm to find it stably.
+			</td>
+		</tr>
+	</table>
+	<br>
+
+	<hr>
+	<center><h1>Results</h1></center>
+	<table align="center" width=800px >
+		
+		<td colspan="2"> <p style="word-wrap: break-word;"> The sparsity <b>"0.k"</b> means the ratio of remaining weights so if the sparsity is higher, the ratio of remaining weights is higher.</p></td>
+		<tr ></tr>
+		<br>
+		<td colspan="2"><p align="center">GFMN - LSUN Bedroom Dataset</p></td>
+		<tr >
+			<td>
+				<img src="resources/gfmn/sparsity0.1_gfmn.jpg" width="500px">	
+			</td>
+			<td>
+				<img src="resources/gfmn/fully_trained_gfmn.jpg" width="500px">
+			</td>
+		</tr>
+		<td colspan="2"><p align="center">BigGAN - CelebA Dataset</p></td>
+		<tr >
+			
+			<td>
+				<img src="resources/biggan/sparsity0.1_biggan.jpg" width="500px">	
+			</td>
+			<td>
+				<img src="resources/biggan/fully_trained_biggan.jpg" width="500px">
+			</td>
+		</tr>
+		<td colspan="2"><p align="center">SNGAN - CelebA Dataset</p></td>
+		<tr>
+			
+			<td>
+				<img src="resources/sngan/sparsity0.1_sngan.jpg" width="500px">	
+			</td>
+			<td>
+				<img src="resources/sngan/fully_trained_sngan.jpg" width="500px">
+			</td>
+		</tr>
+
+	</table>
+	<hr>
+	<table align=center width=450px>
+		<center><h1>Paper and Supplementary Material</h1></center>
+		<tr>
+			<td><a href=""><img class="layered-paper-big" style="height:175px" src="./resources/paper.png"/></a></td>
+			<td><span style="font-size:14pt">Sangyeop Yeo, Yoojin Jang, Jy-yong Sohn, Dongyoon Han, Jaejun Yoo.<br>
+				<b>Can We Find Strong Lottery Tickets in Generative Models?</b><br>
+				AAAI 2023 Accepted<br>
+				(hosted on <a href="">ArXiv</a>)<br>
+				<!-- (<a href="./resources/camera-ready.pdf">camera ready</a>)<br> -->
+				<span style="font-size:4pt"><a href=""><br></a>
+				</span>
+			</td>
+		</tr>
+	</table>
+	<br>
+
+	<table align=center width=600px>
+		<tr>
+			<td><span style="font-size:14pt"><center>
+				<a href="./resources/bibtex.txt">[Bibtex]</a>
+			</center></td>
+		</tr>
+	</table>
+
+	<hr>
+	<br>
+
+	<table align=center width=90%>
+		<tr>
+			<td width=400px>
+				<left>
+					<center><h1>Acknowledgements</h1></center>
+					This work was supported by the National Research Foundation of Korea (NRF) grant funded by the Korea government (MSIT) (No. 2.220574.01), 
+					Institute of Information & communications Technology Planning &
+					 Evaluation (IITP) grant funded by the Korea government (MSIT) 
+					 (No.2020-0-01336, Artificial Intelligence Graduate School Program (UNIST)),
+					  and Institue of Information & communications Technology Planning &
+					   Evaluation (IITP) grant funded by the Korea government (MSIT) (No.2022-0-00959, 
+					   (Part 2) Few-Shot Learning of Causal Inference in Vision and Language for Decision Making).
+					And This template was originally made by <a href="http://web.mit.edu/phillipi/">Phillip Isola</a> and <a href="http://richzhang.github.io/">Richard Zhang</a> for a <a href="http://richzhang.github.io/colorization/">colorful</a> ECCV project; the code can be found <a href="https://github.com/richzhang/webpage-template">here</a>.
+				</left>
+			</td>
+		</tr>
+	</table>
+
+<br>
+</body>
+</html>
+
